@@ -1,0 +1,34 @@
+.reading {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: #c084fc;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--foreground);
+  white-space: pre-wrap;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: #c084fc;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

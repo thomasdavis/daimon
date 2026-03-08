@@ -1,0 +1,132 @@
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.positionLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.card {
+  width: 180px;
+  height: 280px;
+  perspective: 800px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.revealed .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardBack,
+.cardFront {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBack {
+  background: linear-gradient(135deg, #1a0533, #2d1b69, #1a0533);
+  border: 2px solid #6b21a8;
+  box-shadow: 0 0 20px rgba(107, 33, 168, 0.3);
+}
+
+.cardBackDesign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.star {
+  font-size: 3rem;
+  color: #c084fc;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.cardBackLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: #c084fc;
+  font-weight: 700;
+}
+
+.cardFront {
+  background: linear-gradient(170deg, #fefce8, #fef9c3, #fde68a);
+  border: 2px solid #d97706;
+  transform: rotateY(180deg);
+  padding: 20px 12px;
+  gap: 12px;
+  text-align: center;
+}
+
+.cardArcana {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #92400e;
+}
+
+.cardName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1c1917;
+  line-height: 1.3;
+}
+
+.cardName.reversed {
+  transform: rotate(180deg);
+}
+
+.reversedBadge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.keywords {
+  font-size: 0.7rem;
+  color: #78716c;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .card {
+    width: 140px;
+    height: 220px;
+  }
+
+  .cardName {
+    font-size: 0.9rem;
+  }
+}
