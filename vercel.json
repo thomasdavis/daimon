@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npx turbo build --filter=tarot",
+  "outputDirectory": "apps/tarot/.next",
+  "framework": "nextjs"
+}
